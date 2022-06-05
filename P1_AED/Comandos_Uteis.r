@@ -29,3 +29,4 @@ for (num in aux) {
     print(simetr(num))
 }
 
+q()
