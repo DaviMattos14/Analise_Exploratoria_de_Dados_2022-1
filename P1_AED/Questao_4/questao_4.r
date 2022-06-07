@@ -6,8 +6,9 @@ dados
 xx <- split(dados, f <- dados$xx)
 xx
 
-split(dados, f <- names(dados))
+split(dados, f = dados$yy)
 
-
-a <- xx$'2'
-a
+jpeg("plot_xx_yy.jpeg")
+plot(dados$xx,dados$yy)
+#lines(0:70, 0:70, lwd = 3, col = "gray")
+dev.off()
