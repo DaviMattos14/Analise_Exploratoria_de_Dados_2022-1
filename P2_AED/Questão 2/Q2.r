@@ -59,8 +59,6 @@ incl=sr/cv
 incli=na.omit(incl)
 median(incli)
 
-tabela_wage
-
 x <- c(-1,-1,1,1)
 y <- c(0,0.5,0.5,1)
 

@@ -44,3 +44,20 @@ fit11 <- loess(horsepower~acceleration,span=.5,degree=2,family="symmetric")
 lines(pow.grid,predict(fit11,data.frame(acceleration=pow.grid)),col="#ff00aa",lwd=2)
 fit12 <- loess(horsepower~acceleration,span=.5,degree=2,family="gaussian")
 lines(pow.grid,predict(fit12,data.frame(acceleration=pow.grid)),col="#ff0000",lwd=2)
+
+
+jpeg("grafico_q4_05_1_g.jpeg")
+plot(acceleration, horsepower)
+
+powlims <- range(acceleration)
+pow.grid <-seq(from=powlims[1],to=powlims[2])
+
+fit10 <- loess(horsepower~acceleration,span=.5,degree=1,family="gaussian")
+lines(pow.grid,predict(fit10,data.frame(acceleration=pow.grid)),col="red",lwd=2)
+
+fit5 <- loess(horsepower~acceleration,span=.3,degree=1,family="symmetric")
+lines(pow.grid,predict(fit5,data.frame(acceleration=pow.grid)),col="#001aff",lwd=2)
+
+legend("topright",legend=c("degree 1; gaussian; span 0.5","degree 1; symmetric; span 0.3"),col=c("red","blue"),lty=1,lwd=2,cex=1.2)
+
+dev.off()
