@@ -396,3 +396,19 @@ i2=simet.fn(2)
 cl=c(-2,-1,-0.5,0,0.5,1,2)
 cind=c(i2n,i1n,imn,i0,im,i1,i2)
 plot(cl,cind)
+
+
+for (i in 1:length(familia)) {
+   for (j in 1:length(grau)) {
+      for (k in 1:length(span1)) {
+        jpeg("familia_%d_grau_%d_span_%d.jpeg", familia[i],grau[i],span[i])
+        plot(x,y,xlim=powlims,cex=.5)
+        curve(500 + (-30 * x) + (2 * (x)^2) + (-0.02 * (x)^3),add=T,col="blue",lwd=4)
+        title("Local Regression")
+        fit1=loess(y~x,span=span1[k],degree=grau[j],family=familia[i])
+        lines(pow.grid,predict(fit1,data.frame(x=pow.grid)),col="red",lwd=2)
+        dev.off()
+      }
+   }
+}
+
