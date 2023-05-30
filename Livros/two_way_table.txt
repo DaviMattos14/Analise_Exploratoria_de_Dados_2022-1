@@ -1,0 +1,14 @@
+y(linha,coluna) = mu + alfa(linha) + beta(coluna) + e(linha,coluna)
+
+y(linha,coluna) = valor da resposta
+mu = valor central de Y
+afla(linha) = efeito aditivo
+beta(Coluna) = efeito aditivo
+erro(linha,coluna) = erro do modelo
+
+1. Para cada coluna, calcule a mediana M(,coluna) = mediana{y, coluna}
+2. mu = mediana{M(,coluna)}
+3. sigma(linha,coluna) = y(linha,coluna) -m(,coluna)
+4. Para cada linha, alfa = mediana{sigma(linha,coluna)}
+5. Para cada coluna, beta = mediana { m(,coluna) - mu }  
+6. Error = y(linha,coluna) - ( mu + alfa + beta ), para toda linha e coluna 
