@@ -397,7 +397,6 @@ cl=c(-2,-1,-0.5,0,0.5,1,2)
 cind=c(i2n,i1n,imn,i0,im,i1,i2)
 plot(cl,cind)
 
-
 for (i in 1:length(familia)) {
    for (j in 1:length(grau)) {
       for (k in 1:length(span1)) {
